@@ -1,0 +1,49 @@
+//noinspection CssUnknownTarget
+@import '~styles/mixins.scss';
+
+.iconProgress {
+  @include text-nav-bold;
+
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  border: 2px solid $white-100;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+  user-select: none;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    padding: 2px;
+    border-radius: 100%;
+    mask: linear-gradient(#fff 0, #fff 100%) content-box,
+      linear-gradient(#fff 0, #fff 100%) border-box;
+    mask-composite: exclude;
+  }
+
+  &.active {
+    border: none;
+    background: $gradient-1-primary;
+
+    &::after {
+      background: $gradient-1-primary;
+    }
+  }
+
+  &.finished {
+    border: none;
+
+    &::after {
+      background: $gradient-1-primary;
+    }
+  }
+}

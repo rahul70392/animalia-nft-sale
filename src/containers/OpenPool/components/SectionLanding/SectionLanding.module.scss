@@ -1,0 +1,191 @@
+//noinspection CssUnknownTarget
+@import '~styles/mixins.scss';
+
+$gradients: (
+  'yellow': $gradient-4-yellow,
+);
+
+.sectionLanding {
+  display: grid;
+  column-gap: 40px;
+
+  @include b-up(xxl) {
+    grid-template-columns: 310px 1fr;
+  }
+}
+
+.nav {
+  position: sticky;
+  top: calc(70px + 32px);
+  align-self: start;
+
+  @include b-d(xxl) {
+    display: none;
+  }
+}
+
+.blockMain {
+  display: grid;
+  row-gap: 48px;
+  color: $white;
+
+  @include b-up(xxl) {
+    padding-top: 16px;
+  }
+
+  section {
+    > h1 {
+      color: transparent;
+      background: $gradient-5-warning;
+      //noinspection CssInvalidPropertyValue
+      background-clip: text;
+      margin-bottom: 20px;
+
+      + p {
+        margin-top: -8px;
+      }
+    }
+
+    > p {
+      margin-top: 24px;
+    }
+
+    > ul {
+      margin: 24px 0 0;
+      padding-left: 14px;
+      list-style-type: none;
+      display: grid;
+      row-gap: 24px;
+      
+      > li {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 26px;
+      }
+    }
+  }
+}
+
+.imgSolphins {
+  @include fix-ios-border-radius;
+
+  border-radius: 24px;
+}
+
+.cardDolphins {
+  display: flex;
+  justify-content: space-around;
+  background: $gray-fields;
+  border-radius: 24px;
+}
+
+.imgDolphin {
+  width: 88px;
+
+  @include b-btw(md, lg) {
+    width: 56px;
+  }
+
+  @include b-d(md) {
+    width: 48px;
+  }
+}
+
+.imgFollow {
+  width: 20px;
+  margin-right: 30px;
+
+  @include b-btw(md, lg) {
+    width: 20px;
+  }
+
+  @include b-d(md) {
+    width: 20px;
+  }
+}
+
+.cardImg {
+  background: $gray-fields;
+  border-radius: 24px;
+  padding: 32px;
+  display: grid;
+  justify-items: center;
+  row-gap: 56px;
+
+  @include b-btw(md, lg) {
+    padding: 20px;
+  }
+
+  @include b-d(md) {
+    padding: 12px;
+  }
+}
+
+.itemSectionHeading {
+  @include text-subtitle;
+
+  text-align: center;
+  margin-bottom: 20px;
+
+  @each $name, $value in $gradients {
+    &.#{$name} {
+      > span {
+        color: transparent;
+        background: $value;
+        //noinspection CssInvalidPropertyValue
+        background-clip: text;
+      }
+    }
+  }
+}
+
+.typeMain {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .typeItem {
+    display: flex;
+    flex-direction: column;
+    width: 463px;
+
+    > p {
+      margin-bottom: 30px;
+      line-height: 26px;
+    }
+  }
+}
+
+.flexItems {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -22px;
+  margin-top: -28px;
+  justify-content: center;
+
+  > div {
+    margin-left: 22px;
+    margin-top: 28px;
+  }
+
+  @include b-btw(md, lg) {
+    margin-left: -14px;
+    margin-top: -17px;
+
+    > div {
+      margin-left: 14px;
+      margin-top: 17px;
+    }
+  }
+
+  @include b-d(md) {
+    margin-left: -8px;
+    margin-top: -10px;
+
+    > div {
+      margin-left: 8px;
+      margin-top: 10px;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+//noinspection CssUnknownTarget
+@import '~styles/mixins.scss';
+
+.containerPool {
+  display: grid;
+  row-gap: 24px;
+  padding-top: 40px;
+}
+
+.sectionLanding {
+  margin-top: 30px;
+
+  @include b-up(xxl) {
+    margin-top: 16px;
+  }
+}

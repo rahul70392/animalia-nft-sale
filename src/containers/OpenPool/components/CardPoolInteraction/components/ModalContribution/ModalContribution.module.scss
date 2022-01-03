@@ -1,0 +1,67 @@
+//noinspection CssUnknownTarget
+@import '~styles/mixins.scss';
+
+.modalBody {
+  text-align: center;
+  padding: 8px 24px 24px;
+
+  > table {
+    width: 100%;
+    color: $white;
+
+    td {
+      padding: 4px 0;
+    }
+
+    td:nth-child(1) {
+      @include text-nav;
+
+      text-align: start;
+    }
+
+    td:nth-child(2) {
+      @include text-nav-bold;
+
+      text-align: end;
+    }
+
+    .textSecondary {
+      color: $white-500;
+    }
+  }
+
+  .tableFigures {
+    margin-top: 26px;
+  }
+
+  .tdAlignTop {
+    @include b-d(md) {
+      vertical-align: top;
+    }
+  }
+
+  .tableLinebreak {
+    @include b-up(md) {
+      display: none;
+    }
+  }
+}
+
+.stepsContainer {
+  margin-bottom: 8px;
+}
+
+.textInfo {
+  @include text-nav-bold;
+
+  margin-top: 20px;
+  text-align: start;
+  color: $white;
+}
+
+.gridButtons {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 16px;
+}

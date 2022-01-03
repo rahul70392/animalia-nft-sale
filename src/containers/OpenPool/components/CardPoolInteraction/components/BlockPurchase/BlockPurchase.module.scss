@@ -1,0 +1,222 @@
+//noinspection CssUnknownTarget
+@import '~styles/mixins.scss';
+
+.blockPurchase {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.textVerified {
+  @include text-nav-bold;
+
+  color: $white;
+  margin-top: 48px;
+}
+
+.textTitle {
+  margin-top: 16px;
+}
+
+.textDescription {
+  @include text-nav;
+
+  margin-top: 4px;
+}
+
+.gridInputs {
+  display: grid;
+  grid-template-columns: auto 280px;
+  justify-content: space-between;
+  align-items: center;
+
+  @include b-d(md) {
+    row-gap: 10px;
+    grid-template-columns: auto 1fr;
+  }
+}
+
+.iconArrowDown {
+  grid-column: 1 / 3;
+  justify-self: start;
+  margin-left: 12px;
+  color: $white-200;
+
+  @include b-d(md) {
+    justify-self: center;
+    margin: 6px 0;
+  }
+}
+
+.textBalance {
+  @include text-small-1;
+
+  grid-column: 1 / 3;
+  justify-self: end;
+  text-align: end;
+  margin-right: 20px;
+  margin-bottom: 6px;
+
+  @include b-d(md) {
+    grid-column: 2 / 3;
+    align-self: end;
+  }
+}
+
+.textPrimary {
+  color: $white;
+}
+
+.gridLabel {
+  display: grid;
+  grid-template-columns: 40px auto;
+  column-gap: 10px;
+
+  .imgToken {
+    @include fix-ios-border-radius;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    grid-row: 1 / 3;
+  }
+
+  .imgTokenAni {
+    @include fix-ios-border-radius;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    grid-row: 1 / 3;
+    background: #28292E;
+    padding: 3px;
+  }
+
+  .textBuyWith {
+    @include text-info;
+  }
+
+  .textTokenName {
+    @include text-subtitle;
+
+    color: $white;
+    align-self: end;
+  }
+
+  @include b-d(md) {
+    justify-self: start;
+  }
+}
+
+.inputWrapper {
+  position: relative;
+
+  @include b-d(md) {
+    grid-column: 1 / 3;
+  }
+}
+
+.btnMax {
+  @include text-nav-bold;
+
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  z-index: 10;
+  color: $white-500;
+  transition: color 0.25s;
+
+  &:hover {
+    color: $white;
+  }
+
+  &.isMax {
+    color: transparent;
+    background: $gradient-1-primary;
+    //noinspection CssInvalidPropertyValue
+    background-clip: text;
+  }
+}
+
+.labelBuyWith {
+  @include b-d(md) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+}
+
+.labelReceive {
+  @include b-d(md) {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+  }
+}
+
+.btnPurchase {
+  width: 100%;
+  margin-top: 32px;
+}
+
+.blockAllocationFilled {
+  @include text-nav-1;
+
+  padding: 12px 24px;
+  color: $white;
+  background-color: $white-100;
+  border-radius: 16px;
+  margin-top: 32px;
+}
+
+.cardPurchase {
+  width: 100%;
+  max-width: 480px;
+  padding: 24px 32px 32px;
+  border: 1px solid $gray-card;
+  border-radius: 20px;
+  margin-top: 28px;
+
+  @include b-d(md) {
+    padding: 8px 8px 16px;
+  }
+
+  > table {
+    width: 100%;
+    color: $white;
+
+    td {
+      padding: 4px 0;
+    }
+
+    td:nth-child(1) {
+      @include text-nav;
+
+      text-align: start;
+    }
+
+    td:nth-child(2) {
+      @include text-nav-bold;
+
+      text-align: end;
+    }
+
+    .textSecondary {
+      color: $white-500;
+    }
+  }
+
+  .tableFigures {
+    margin-top: 26px;
+  }
+
+  .tdAlignTop {
+    @include b-d(md) {
+      vertical-align: top;
+    }
+  }
+
+  .tableLinebreak {
+    @include b-up(md) {
+      display: none;
+    }
+  }
+}

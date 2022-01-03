@@ -1,0 +1,107 @@
+//noinspection CssUnknownTarget
+@import '~styles/mixins.scss';
+
+.blockVerification {
+  display: grid;
+  justify-items: center;
+  margin: 50px 0px 100px 0px;
+  > p {
+    margin-top: 4px;
+    text-align: center;
+    color: $white;
+  }
+}
+
+.textCongrats {
+  margin: 48px 0 8px;
+
+  > span {
+    color: transparent;
+    background: $gradient-4-yellow;
+    //noinspection CssInvalidPropertyValue
+    background-clip: text;
+  }
+}
+
+.textPrimary {
+  font-weight: $font-weight-bold;
+  color: transparent;
+  background: $gradient-1-primary;
+  //noinspection CssInvalidPropertyValue
+  background-clip: text;
+}
+
+.cardFiguresTable {
+  width: 100%;
+  max-width: 480px;
+  padding: 24px 32px 32px;
+  border: 1px solid $gray-card;
+  border-radius: 20px;
+  margin-top: 40px;
+
+  @include b-d(md) {
+    padding: 24px 16px 8px;
+  }
+
+  > table {
+    width: 100%;
+    color: $white;
+
+    td:nth-child(1) {
+      @include text-nav;
+    }
+
+    td:nth-child(2) {
+      @include text-nav-1;
+
+      text-align: end;
+      padding: 2px 0;
+    }
+
+    tfoot {
+      td:nth-child(1) {
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+
+  .tablePrices {
+    margin-top: 20px;
+  }
+
+  .tableTime {
+    margin-top: 18px;
+
+    td:nth-child(2) {
+      @include text-nav-bold;
+
+      padding: 4px 0;
+    }
+  }
+
+  .textSecondary {
+    color: $white-500;
+  }
+}
+
+.textTableLabel {
+  @include text-subtitle;
+  padding: 35px;
+  color: $white;
+  text-align: center;
+}
+
+.textNotVerified {
+  font-weight: $font-weight-bold;
+  color: transparent;
+  background: $gradient-2-danger;
+  //noinspection CssInvalidPropertyValue
+  background-clip: text;
+  margin-top: 28px;
+  text-align: center;
+}
+
+.btnVerify {
+  width: 100%;
+  margin-top: 16px;
+}

@@ -1,0 +1,180 @@
+//noinspection CssUnknownTarget
+@import '~styles/mixins.scss';
+
+.cardPoolInteraction {
+  @include style-card;
+
+  padding: 8px;
+  display: grid;
+  row-gap: 32px;
+}
+
+.gridTop {
+  display: grid;
+  grid-template-columns: auto 368px;
+  column-gap: 62px;
+  padding: 16px 0 32px;
+  margin: 0 24px;
+  border-bottom: 1px solid $gray-card;
+
+  @include b-d(lg) {
+    grid-template-columns: auto;
+    row-gap: 32px;
+    padding: 8px 0 32px;
+    margin: 0 12px;
+  }
+
+  @include b-d(md) {
+    padding: 4px 0 32px;
+    margin: 0 8px;
+  }
+}
+
+.blockInfo {
+  max-width: 580px;
+}
+
+.textSubHeading {
+  @include text-nav-bold;
+
+  margin-top: 4px;
+  color: $white-500;
+}
+
+.textDescription {
+  @include text-body-1;
+
+  color: $white;
+  margin-top: 16px;
+}
+
+.badgeType {
+  @include text-nav-bold;
+
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 7px;
+  position: relative;
+  color: $white;
+  margin-top: 16px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    padding: 2px;
+    border-radius: 7px;
+    background: $gradient-1-primary;
+    mask: linear-gradient(#fff 0, #fff 100%) content-box,
+      linear-gradient(#fff 0, #fff 100%) border-box;
+    //-webkit-mask-composite: destination-out; // Breaks on iOS
+    mask-composite: exclude;
+  }
+}
+
+.gridFigures {
+  margin-top: 32px;
+  display: grid;
+  grid-auto-flow: column;
+
+  @include b-d(md) {
+    grid-auto-flow: row;
+    row-gap: 24px;
+  }
+}
+
+.colFigures {
+  display: grid;
+  row-gap: 6px;
+}
+
+.textFigureLabel {
+  @include text-nav;
+
+  color: $white-500;
+}
+
+.textTokenName {
+  @include text-subtitle;
+
+  color: $white-500;
+}
+
+.buttonsFlex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 50px 20%;
+
+  @include b-d(md) {
+    flex-direction: column;
+    row-gap: 24px;
+  }
+}
+
+.btnConnect {
+  width: 280px;
+  justify-self: center;
+}
+
+
+.loadingOverlay {
+  border-radius: $modal-content-border-radius;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba($gray-fields, 0.8);
+  z-index: $zindex-modal + 10;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(1px);
+  padding: 100px 0px;
+
+  // Mozilla Firefox
+  @supports not (backdrop-filter: blur(1px)) {
+    background-color: rgba($gray-fields, 0.88);
+  }
+}
+
+.spinner {
+  width: 100px;
+  height: 100px;
+  border-color: $white;
+  border-right-color: transparent;
+}
+
+.spinnerWrapper {
+  display: grid;
+  justify-items: center;
+  row-gap: 36px;
+  color: $white;
+}
+
+.textContainer {
+  text-align: center;
+  display: grid;
+  row-gap: 2px;
+}
+
+.extraText {
+  font-size: 80%;
+}
+
+.textLoading,
+.extraText {
+  text-shadow: 0 0 10px $gray-fields;
+  white-space: pre-line;
+}
+
+.textLoading::after {
+  display: inline-block;
+  animation: dotty steps(1, end) 1.5s infinite;
+  content: '';
+}

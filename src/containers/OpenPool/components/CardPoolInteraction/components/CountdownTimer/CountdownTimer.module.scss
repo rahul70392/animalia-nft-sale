@@ -1,0 +1,32 @@
+//noinspection CssUnknownTarget
+@import '~styles/mixins.scss';
+
+.countdownTimer {
+  display: grid;
+  row-gap: 16px;
+}
+
+.timerHeading {
+  @include text-nav;
+
+  color: $white;
+  text-align: center;
+}
+
+.gridDigits {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  column-gap: 8px;
+}
+
+.textColon {
+  color: $white-500;
+  margin-top: 20px;
+
+  @include b-d(md) {
+    @include text-subtitle;
+
+    margin-top: 18px;
+  }
+}

@@ -1,0 +1,26 @@
+//noinspection CssUnknownTarget
+@import '~styles/mixins.scss';
+
+.anchorNavMenuItem {
+  @include text-nav-1;
+  color: $white-500;
+  position: relative;
+
+  &.active {
+    color: $white;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      border: 2px solid $white;
+      position: absolute;
+      left: -10px;
+      top: 50%;
+      transform: translate(-100%, -50%);
+      pointer-events: none;
+    }
+  }
+}

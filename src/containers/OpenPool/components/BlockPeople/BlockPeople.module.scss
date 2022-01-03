@@ -1,0 +1,73 @@
+//noinspection CssUnknownTarget
+@import '~styles/mixins.scss';
+
+.blockPeople {
+  @include style-card;
+
+  background-color: #1a1b20;
+  display: grid;
+  row-gap: 22px;
+  padding: 20px 0 14px;
+
+  @include b-up(lg) {
+    grid-auto-flow: column;
+    align-items: center;
+    column-gap: 36px;
+    justify-content: space-between;
+  }
+}
+
+.gridText {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 8px;
+  padding: 0 24px;
+  justify-self: start;
+  align-items: baseline;
+}
+
+.textFollowers {
+  @include text-subtitle;
+}
+
+.wrapperAvatars {
+  position: relative;
+  overflow: hidden;
+  max-width: 904px;
+}
+
+%blendShadow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  pointer-events: none;
+}
+
+.blendShadowLeft {
+  @extend %blendShadow;
+
+  left: 0;
+  background: linear-gradient(90deg, #1a1b20 0%, rgba(26, 27, 32, 0) 100%);
+}
+
+.blendShadowRight {
+  @extend %blendShadow;
+
+  right: 0;
+  background: linear-gradient(270deg, #1a1b20 0%, rgba(26, 27, 32, 0) 100%);
+}
+
+.gridAvatars {
+  display: inline-flex;
+  grid-auto-flow: column;
+  justify-content: flex-start;
+  margin-left: calc(-8px - 24px);
+}
+
+.imgAvatar {
+  @include fix-ios-border-radius;
+
+  border-radius: 50%;
+  margin-left: 8px;
+}

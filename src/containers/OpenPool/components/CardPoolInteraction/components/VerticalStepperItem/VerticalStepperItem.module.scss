@@ -1,0 +1,67 @@
+//noinspection CssUnknownTarget
+@import '~styles/mixins.scss';
+
+.verticalStepperItem {
+  text-align: start;
+  display: grid;
+  grid-template-columns: 8px auto 1fr;
+  column-gap: 12px;
+  align-items: center;
+
+  &:last-child {
+    .verticalLine {
+      visibility: hidden;
+    }
+
+    .textDescription {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.circleStatus {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: $white-100;
+
+  &.active {
+    background: $gradient-1-primary;
+  }
+}
+
+.verticalLine {
+  width: 1px;
+  background-color: $white-100;
+  height: 100%;
+  justify-self: center;
+
+  &.finished {
+    background: $gradient-1-primary;
+  }
+}
+
+.textTitle {
+  @include text-nav-1;
+
+  color: $white;
+}
+
+.textDescription {
+  @include text-nav;
+
+  margin-top: 2px;
+  padding-bottom: 24px;
+  grid-column: 2 / 4;
+}
+
+.iconSpinner {
+  margin-left: -6px;
+  color: $white-500;
+  animation: rotate 1s linear infinite;
+  visibility: hidden;
+
+  &.active {
+    visibility: visible;
+  }
+}

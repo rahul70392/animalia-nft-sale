@@ -1,0 +1,28 @@
+//noinspection CssUnknownTarget
+@import '~styles/mixins.scss';
+
+.solphinItem {
+  text-align: center;
+  font-weight: 400;
+  font-family: Avenixel, Poppins, sans-serif;
+}
+
+.img {
+  width: 64px;
+}
+
+.textName {
+  margin-top: 12px;
+  min-width: 94px;
+  font-size: 18px;
+  line-height: 20px;
+  color: $white;
+}
+
+.textRarity {
+  margin-top: 2px;
+  font-size: 15px;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  color: $white-500;
+}

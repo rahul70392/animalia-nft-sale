@@ -1,0 +1,15 @@
+//noinspection CssUnknownTarget
+@import '~styles/mixins.scss';
+
+.anchorNavMenu {
+  @include style-card;
+
+  padding: 28px 16px;
+}
+
+.itemsWrapper {
+  display: grid;
+  row-gap: 20px;
+  border-left: 1px solid $gray-card;
+  padding: 4px 0 4px 13px;
+}
