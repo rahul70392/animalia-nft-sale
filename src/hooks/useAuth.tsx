@@ -55,7 +55,7 @@ export const AuthProvider: React.FC = ({ children }) => {
         if (window.ethereum) {
           try {
             window.ethereum
-              .send('wallet_switchEthereumChain', [{ chainId: '0x4' }, account])
+              .send('wallet_switchEthereumChain', [{ chainId: '0x1' }, account])
               .then(() => {
                 console.log('wallet_switchEthereumChain')
                 connect()
@@ -149,8 +149,8 @@ export const AuthProvider: React.FC = ({ children }) => {
   }, [active, account])
 
   useEffect(() => {
-    if (chainId !== 4 && library) {
-      library.send('wallet_switchEthereumChain', [{ chainId: '0x4' }, account])
+    if (chainId !== 1 && library) {
+      library.send('wallet_switchEthereumChain', [{ chainId: '0x1' }, account])
     }
   }, [chainId, library])
 

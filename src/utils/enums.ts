@@ -126,10 +126,10 @@ export const ALL_SUPPORTED_CHAIN_IDS: SupportedChainId[] = [
 ]
 
 export const ALL_SUPPORTED_CHAIN_OPTIONS = [
-  // {
-  //   label: 'MAINNET',
-  //   value: 1,
-  // },
+  {
+    label: 'MAINNET',
+    value: 1,
+  },
   // {
   //   label: 'ROPSTEN',
   //   value: 3,
