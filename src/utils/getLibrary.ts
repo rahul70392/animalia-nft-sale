@@ -17,7 +17,7 @@ export default function getLibrary(provider: any): Web3Provider {
     typeof provider.chainId === 'number'
       ? provider.chainId
       : typeof provider.chainId === 'string'
-      ? 1
+      ? 4
       : // ? parseInt(provider.chainId, 10)
         'any'
   )

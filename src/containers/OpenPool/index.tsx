@@ -26,7 +26,7 @@ const OpenPoolPage: FC<OpenPoolPageProps> = (props) => {
   const { site } = data
   const [isLoading, setIsLoading] = useState(false)
   const [processID, setProcessID] = useState(1)
-  const [isSaleEnded, setIsSaleEnded] = useState(true)
+  const [isSaleEnded, setIsSaleEnded] = useState(false)
 
   const handleChangeStep = (stepID: number) => setProcessID(stepID)
 

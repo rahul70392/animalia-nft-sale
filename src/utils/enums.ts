@@ -110,6 +110,9 @@ export enum SupportedChainId {
   ARBITRUM_RINKEBY = 421611,
   OPTIMISM = 10,
   OPTIMISTIC_KOVAN = 69,
+
+  BSC_MAINNET = 38,
+  BSC_TESTNET = 97,
 }
 
 export const ALL_SUPPORTED_CHAIN_IDS: SupportedChainId[] = [
@@ -123,6 +126,9 @@ export const ALL_SUPPORTED_CHAIN_IDS: SupportedChainId[] = [
   SupportedChainId.ARBITRUM_RINKEBY,
   SupportedChainId.OPTIMISM,
   SupportedChainId.OPTIMISTIC_KOVAN,
+
+  SupportedChainId.BSC_MAINNET,
+  SupportedChainId.BSC_TESTNET,
 ]
 
 export const ALL_SUPPORTED_CHAIN_OPTIONS = [
@@ -162,4 +168,8 @@ export const ALL_SUPPORTED_CHAIN_OPTIONS = [
   //   label: 'OPTIMISTIC_KOVAN',
   //   value: 69,
   // },
+  {
+    label: 'BSC_MAINNET',
+    value: 38,
+  },
 ]
