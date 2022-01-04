@@ -43,20 +43,20 @@ const OpenPoolPage: FC<OpenPoolPageProps> = (props) => {
   }, [processID])
 
   useEffect(() => {
-    if (process.env.GATSBY_PIXEL_RECEIVE_ADDRESS && process.env.GATSBY_USDT_RECEIVE_ADDRESS && process.env.GATSBY_TOTAL_SUPPLY) {
-      balanceOfUSDT(process.env.GATSBY_USDT_RECEIVE_ADDRESS)
-        .call()
-        .then((erc: any) => {
-          console.log('receiver balance', toEther(erc));
-          if (process.env.GATSBY_TOTAL_SUPPLY && (parseInt(toEther(erc)) >= parseInt(process.env.GATSBY_TOTAL_SUPPLY))) {
-            setIsSaleEnded(true)
-          } else {
-            setIsSaleEnded(false)
-          }
-        })
-        .catch((e: any) => console.log(e, 'erc balance not fetched'))
-    }
-    console.log('supply', process.env.GATSBY_TOTAL_SUPPLY)
+    // if (process.env.GATSBY_PIXEL_RECEIVE_ADDRESS && process.env.GATSBY_USDT_RECEIVE_ADDRESS && process.env.GATSBY_TOTAL_SUPPLY) {
+    //   balanceOfUSDT(process.env.GATSBY_USDT_RECEIVE_ADDRESS)
+    //     .call()
+    //     .then((erc: any) => {
+    //       console.log('receiver balance', toEther(erc));
+    //       if (process.env.GATSBY_TOTAL_SUPPLY && (parseInt(toEther(erc)) >= parseInt(process.env.GATSBY_TOTAL_SUPPLY))) {
+    //         setIsSaleEnded(true)
+    //       } else {
+    //         setIsSaleEnded(false)
+    //       }
+    //     })
+    //     .catch((e: any) => console.log(e, 'erc balance not fetched'))
+    // }
+    // console.log('supply', process.env.GATSBY_TOTAL_SUPPLY)
   }, [])
 
   return (

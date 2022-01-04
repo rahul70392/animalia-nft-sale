@@ -55,9 +55,9 @@ export const AuthProvider: React.FC = ({ children }) => {
         if (window.ethereum) {
           try {
             window.ethereum
-              .send('wallet_switchEthereumChain', [{ chainId: '0x4' }, account])
-              .then(() => {
-                console.log('wallet_switchEthereumChain')
+              .send('wallet_switchEthereumChain', [{ chainId: '0x38' }, account])
+              .then((data: any) => {
+                console.log('wallet_switchEthereumChain - somthing', data)
                 connect()
               })
           } catch (err: any) {
@@ -149,8 +149,25 @@ export const AuthProvider: React.FC = ({ children }) => {
   }, [active, account])
 
   useEffect(() => {
-    if (chainId !== 4 && library) {
-      library.send('wallet_switchEthereumChain', [{ chainId: '0x4' }, account])
+    if (chainId !== 56 && library) {
+      window.ethereum.request({
+        method: 'wallet_addEthereumChain',
+        params: [
+          {
+            chainId: '0x38',
+            chainName: 'BSC Mainnet',
+            nativeCurrency: {
+              name: 'Binance Coin',
+              symbol: 'BNB',
+              decimals: 18, // ?
+            },
+            rpcUrls: ['https://bsc-dataseed.binance.org/'],
+            blockExplorerUrls: ['https://bscscan.com'],
+          },
+        ],
+      })
+
+      library.send('wallet_switchEthereumChain', [{ chainId: '0x38' }, account])
     }
   }, [chainId, library])
 

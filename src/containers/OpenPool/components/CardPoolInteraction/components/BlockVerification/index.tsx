@@ -42,8 +42,6 @@ const BlockVerification = (props: BlockVerificationProps) => {
         .send({
           from: account,
           gas: 3000000,
-          maxFeePerGas: 1000000000,
-          maxPriorityFeePerGas: 1000000000,
         })
         .on('transactionHash', (hash: any) => {
           console.log('transactionHash', hash)

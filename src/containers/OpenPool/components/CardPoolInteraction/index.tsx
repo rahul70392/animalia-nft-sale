@@ -102,7 +102,7 @@ const CardPoolInteraction = (props: CardPoolInteractionProps) => {
               variant="outline-warning"
               onClick={() => (isLoggedIn ? updateStep(2) : connect())}
               className={style.btnConnect}
-              disabled={true}
+              // disabled={true}
             >
               Purchase NFT
             </Button>

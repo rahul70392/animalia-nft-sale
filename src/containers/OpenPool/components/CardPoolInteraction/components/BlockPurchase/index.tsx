@@ -74,14 +74,12 @@ const BlockPurchase = (props: BlockPurchaseProps) => {
         .send({
           from: account,
           gas: 3000000,
-          maxFeePerGas: 1000000000,
-          maxPriorityFeePerGas: 1000000000,
         })
         .on('transactionHash', (hash: any) => {
           setusdtTxHash(hash)
           addToastToStack({ type: 'pixelSuccess' })
           handleLoading(false)
-          updateStep(4)
+          updateStep(5)
         })
         .on("confirmation", function (confirmationNumber: any, receipt: any) {
           // console.log(confirmationNumber, receipt);
@@ -165,7 +163,7 @@ const BlockPurchase = (props: BlockPurchaseProps) => {
       />
       <CountdownTimer
         heading="Sale will end in"
-        endsAtTimestamp={dayjs("2022-01-05 11:00:00").add(5.30, 'hour').unix()}
+        endsAtTimestamp={dayjs("2022-01-05 11:00:00").add(5.50, 'hour').unix()}
       />
       <p className={style.textVerified}>
         Your Pixel Purchase has been verified.

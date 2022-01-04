@@ -111,7 +111,7 @@ export enum SupportedChainId {
   OPTIMISM = 10,
   OPTIMISTIC_KOVAN = 69,
 
-  BSC_MAINNET = 38,
+  BSC_MAINNET = 56,
   BSC_TESTNET = 97,
 }
 
@@ -170,6 +170,6 @@ export const ALL_SUPPORTED_CHAIN_OPTIONS = [
   // },
   {
     label: 'BSC_MAINNET',
-    value: 38,
+    value: 56,
   },
 ]

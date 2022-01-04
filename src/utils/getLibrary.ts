@@ -7,17 +7,19 @@ const NETWORK_POLLING_INTERVALS: { [chainId: number]: number } = {
   [SupportedChainId.ARBITRUM_RINKEBY]: ms`1s`,
   [SupportedChainId.OPTIMISM]: ms`1s`,
   [SupportedChainId.OPTIMISTIC_KOVAN]: ms`1s`,
+  [SupportedChainId.OPTIMISTIC_KOVAN]: ms`1s`,
+  [SupportedChainId.BSC_MAINNET]: ms`1s`,
 }
 
 export default function getLibrary(provider: any): Web3Provider {
-  console.log('fsWeb3ProviderNetwork', parseInt(provider.chainId, 10))
+  console.log('fsWeb3ProviderNetwork', provider.chainId)
   const library = new Web3Provider(
     provider,
     // eslint-disable-next-line no-nested-ternary
     typeof provider.chainId === 'number'
       ? provider.chainId
       : typeof provider.chainId === 'string'
-      ? 4
+      ? 56
       : // ? parseInt(provider.chainId, 10)
         'any'
   )
