@@ -142,7 +142,7 @@ const BlockVerification = (props: BlockVerificationProps) => {
           variant="outline-warning"
           onClick={handleSendPixels}
           className={style.btnVerify}
-          disabled={parseInt(usdtBalance) > 500 ? false : true}
+          disabled={parseInt(usdtBalance) >= 500 ? false : true}
         >
           Confirm
         </Button>
